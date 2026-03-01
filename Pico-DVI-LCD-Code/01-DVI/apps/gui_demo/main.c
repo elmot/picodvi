@@ -73,53 +73,18 @@ int main()
 	Paint_NewImage(framebuf, FRAME_WIDTH, FRAME_HEIGHT, 0, Scale3_WHITE);
 	Paint_SetScale(3);
 	multicore_launch_core1(core1_main);
+	Paint_Clear(Scale3_BLACK);
 	while (1)
 	{
-		double x= 0;
-		Paint_Clear(Scale3_WHITE);
+		Paint_DrawRectangle(100,100,108,110,Scale3_RED,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(108,100,116,110,Scale3_GREEN,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(100,110,108,120,Scale3_GREEN | Scale3_RED,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(108,110,116,120,Scale3_WHITE,1,DRAW_FILL_FULL);
 		sleep_ms(500);
-		Paint_Clear(Scale3_RED);
-		sleep_ms(500);
-		Paint_Clear(Scale3_RED|Scale3_GREEN);
-		sleep_ms(500);
-		Paint_Clear(Scale3_GREEN);
-		sleep_ms(500);
-		Paint_Clear(Scale3_BLUE|Scale3_GREEN);
-		sleep_ms(500);
-		Paint_Clear(Scale3_BLUE);
-		sleep_ms(500);
-		Paint_Clear(Scale3_BLUE|Scale3_RED);
-		sleep_ms(500);
-		Paint_Clear(Scale3_BLACK);
-		sleep_ms(500);
-
-		Paint_Clear(Scale3_WHITE);
-		Paint_DrawPoint(2, 1, Scale3_WHITE, DOT_PIXEL_1X1, DOT_FILL_RIGHTUP); // 240 240
-        Paint_DrawPoint(2, 6, Scale3_WHITE, DOT_PIXEL_2X2, DOT_FILL_RIGHTUP);
-        Paint_DrawPoint(2, 11, Scale3_WHITE, DOT_PIXEL_3X3, DOT_FILL_RIGHTUP);
-        Paint_DrawPoint(2, 16, Scale3_WHITE, DOT_PIXEL_4X4, DOT_FILL_RIGHTUP);
-        Paint_DrawPoint(2, 21, Scale3_WHITE, DOT_PIXEL_5X5, DOT_FILL_RIGHTUP);
-        Paint_DrawLine(10, 5, 40, 35, Scale3_RED, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
-        Paint_DrawLine(10, 35, 40, 5, Scale3_RED, DOT_PIXEL_2X2, LINE_STYLE_SOLID);
-
-        Paint_DrawLine(80, 20, 110, 20, Scale3_GREEN, DOT_PIXEL_1X1, LINE_STYLE_DOTTED);
-        Paint_DrawLine(95, 5, 95, 35, Scale3_GREEN, DOT_PIXEL_1X1, LINE_STYLE_DOTTED);
-
-        Paint_DrawRectangle(10, 5, 40, 35, Scale3_BLUE, DOT_PIXEL_2X2, DRAW_FILL_EMPTY);
-        Paint_DrawRectangle(45, 5, 75, 35, Scale3_BLUE, DOT_PIXEL_2X2, DRAW_FILL_FULL);
-
-        Paint_DrawCircle(95, 20, 15, Scale3_BLUE, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-        Paint_DrawCircle(130, 20, 15, Scale3_BLUE, DOT_PIXEL_1X1, DRAW_FILL_FULL);
-
-        Paint_DrawNum(50, 40, 9.87654321, &Font20, 3, Scale3_WHITE, Scale3_BLACK);
-        Paint_DrawString_EN(1, 40, "ABC", &Font20, 0x000f, 0xfff0);
-        Paint_DrawString_CN(1, 60, "ª∂”≠ π”√", &Font24CN, Scale3_WHITE, Scale3_BLUE);
-        Paint_DrawString_EN(1, 100, "RP2040-PiZero", &Font16, Scale3_RED, Scale3_WHITE);
-		for(uint16_t cnt=0;cnt<5000;cnt++)
-		{
-			x+=0.001;
-			Paint_DrawNum(200, 200, x, &Font24, 3, Scale3_WHITE, Scale3_BLACK);
-			sleep_ms(1);
-		}
+		Paint_DrawRectangle(100,100,108,110,Scale3_BLACK,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(108,100,116,110,Scale3_GREEN,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(100,110,108,120,Scale3_GREEN | Scale3_RED,1,DRAW_FILL_FULL);
+		Paint_DrawRectangle(108,110,116,120,Scale3_GREEN,1,DRAW_FILL_FULL);
+        sleep_ms(500);
 	}
 }
