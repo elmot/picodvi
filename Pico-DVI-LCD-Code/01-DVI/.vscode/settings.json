@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "testcard_320x240_rgb565.h": "c",
+        "common_dvi_pin_configs.h": "c"
+    }
+}
